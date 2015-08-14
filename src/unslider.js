@@ -191,9 +191,11 @@
 
 		//  Autoplay functionality
 		_.play = function() {
-			_.t = setInterval(function() {
-				_.to(_.i + 1);
-			}, _.o.delay | 0);
+      if(typeof _.t !== 'undefined'){
+  			_.t = setInterval(function() {
+  				_.to(_.i + 1);
+  			}, _.o.delay | 0);
+      }
 		};
 
 		//  Stop autoplay
